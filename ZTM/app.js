@@ -23,9 +23,16 @@ const vm = Vue.createApp({
   computed: {
     fullName(){
       console.log('full namce method');
-      this.age
+      
       return `${this.firstName} ${this.lastName.toUpperCase()}`
     }, 
+  },
+  watch: {
+    age(newValm , oldVal){
+      setTimeout(()=>{
+        this.age = 20
+      },3000)
+    }
   }
 }).mount("#app");
 
