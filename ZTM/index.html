@@ -7,16 +7,20 @@
 
   <body>
     <div id="app" v-cloak>
-      <p>{{fullName()}}</p>
+      <p>{{fullName}}</p>
       <p><a v-bind:href="url" target="_blank">Google</a></p>
       <p v-html="raw_url"></p>
-      <p>{{age}}</p>
+      <p>{{ typeof age}}</p>
       <hr />
       <label>First Name</label>
       <!-- v-model ทำเสมือนกับ :value ,@input="updateLastName" ในอันเดียวกัน -->
-      <input type="text" v-model="firstName" />
+      <input type="text" v-model.lazy.trim="firstName" />
       <label>Last Name</label>
       <input type="text" :value="lastName" @input="updateLastName" />
+
+      <label>Age</label>
+      <input type="number" v-model.number="age" />
+
       <button type="button" @click="increment">Increment</button>
       <button type="button" @click="decrement">Decrement</button>
     </div>
