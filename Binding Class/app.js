@@ -9,9 +9,7 @@ let vm = Vue.createApp({
     computed: {
         circle_classes(){
             return {purple: this.isPurple}
-        },
-        select_class(){
-            return {}
         }
+        
     }
 }).mount('#app')

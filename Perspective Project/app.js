@@ -4,7 +4,11 @@ Vue.createApp({
             perspective : 100,
             rotateX : 0 ,
             rotateY : 0 ,
-            rotateZ : 0 
+            rotateZ : 0 ,
+            isPurple: false,
+            selectedColor: ''
+
+
         }
 
     },
@@ -21,6 +25,9 @@ Vue.createApp({
             }
 
         }
+        ,circle_classes(){
+            return {purple: this.isPurple}
+        }
     },
 
     methods: {
@@ -29,7 +36,12 @@ Vue.createApp({
         this.rotateX =0
         this.rotateY =0
         this.rotateZ =0
-      }  
+      },
+      async copy(){
+        let text = `transform:${this.box.transform};`
+        await navigator.clipboard.writeText(text)
+        alert("CSS Copied to Clipboard")
+      }
     },
 
 }).mount('#app')
