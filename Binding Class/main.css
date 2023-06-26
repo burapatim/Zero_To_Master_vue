@@ -31,6 +31,9 @@ input[type=number]{
 .purple{
     background-color: #767DEA;
 }
+.red{
+    background-color: #FFC26F;
+}
 .text-black{
     color: #424242;
 }
